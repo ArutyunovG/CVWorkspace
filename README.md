@@ -218,3 +218,15 @@ All the C++ deps, as well as CMake and Bazel are locally installed in ```WORKSPA
 Such separation of environment allows user to choose different python packages, C++ libraries and build tools between different installations of CVWorkspace.
 
 For more advanced understanding of the installed CVWorkspace structure, please refer to file ```LIBS_BASE/setup.sh```.
+
+## Contributing
+
+CVWorkspace is intended to be non-commercial work with open source spirit and contributions are highly welcome.
+
+The expected contribution conditions are
+
+<ul>
+<li> you agree, that your contributions are MIT-licensed
+<li> contributed code is written from scratch and does not havve parts copied from other repositories.
+</ul>
+
