@@ -52,7 +52,7 @@ CUDA_ARCH="61 75"
 #----------------------------------
 
 # These base deps have to be built once
-BUILD_BASE_DEPS=1
+BUILD_BASE_DEPS=0
 
 #----------------------------------
 # ----------- Frameworks ----------
@@ -61,7 +61,7 @@ BUILD_BASE_DEPS=1
 # Caffe
 
 # Build bvlc/Caffe master branch
-BUILD_CAFFE=1
+BUILD_CAFFE=0
 
 # Build Caffe SSD fork
 BUILD_CAFFE_SSD=0
@@ -81,37 +81,37 @@ BUILD_DETECTRON=0
 # MXNet
 
 # Build MXNet framework
-BUILD_MXNET=1
+BUILD_MXNET=0
 
 # Install GluonCV
-BUILD_GLUON=1
+BUILD_GLUON=0
 
 #----------------------------------
 
 # Pytorch
 
 # Build PyTorch framework
-BUILD_PYTORCH=1
+BUILD_PYTORCH=0
 
 # Build torchvision
-BUILD_TORCHVISION=1
+BUILD_TORCHVISION=0
 
 # Build apex
-BUILD_APEX=1
+BUILD_APEX=0
 
 # Instal fvcore
-INSTALL_FVCORE=1
+INSTALL_FVCORE=0
 
 # Build Detectron
-BUILD_DETECTRON2=1
+BUILD_DETECTRON2=0
 
 #----------------------------------
 
 # Build Tensorflow framework
-BUILD_TENSORFLOW=1
+BUILD_TENSORFLOW=0
 
 # Build Tensorflow Object Detection API
-BUILD_TF_OD_API=1
+BUILD_TF_OD_API=0
 
 #----------------------------------
 # ------ Additional CV tools-------
@@ -127,7 +127,7 @@ BUILD_OPENVINO=0
 # Install dataset converters for various
 # object detection and instance segmentation formats
 #
-INSTALL_DATASET_CONVERTERS=1
+INSTALL_DATASET_CONVERTERS=0
 
 # Build ffmpeg
 BUILD_FFMPEG=0
