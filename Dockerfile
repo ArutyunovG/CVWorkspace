@@ -13,5 +13,5 @@ WORKDIR ${HOME}
 
 USER root
 
-ADD . ${HOME}/wip_builder
-RUN bash -i wip_builder/install.sh
+ADD . ${HOME}/CVWorkspace
+RUN bash -i CVWorkspace/install.sh
