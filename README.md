@@ -79,7 +79,7 @@ Once cuDNN archive has been downloaded, please modify ```install_cudnn.sh```, so
 Afterwards the installation is performed with the command
 
 ```
-sudo bash -i install.sh
+sudo bash -i install_cudnn.sh
 ```
 ### Base dependencies
 
@@ -125,7 +125,7 @@ BUILD_DETECTRON2=1
 and then ```install.sh``` is called
 
 ```
-bash -i install_cudnn.sh
+bash -i install.sh
 ```
 
 
@@ -142,7 +142,7 @@ The following table summarises frameworks and the appropriate switches in the ``
 
 <b>Note.</b> Please note, that Python bindings of Caffe2 are automatically installed with Pytorch and ```BUILD_PYTORCH``` is the recommended option to install Caffe2. ```BUILD_CAFFE2``` option is separated to provide CMake and C++ oriented Caffe2 build, which can be useful for production deployment.
 
-The following table summarises computer vision environments on top of deep learning frameworks and the appropriate switches in the ```config.sh```
+The following table summarises computer vision environments on top of deep learning frameworks and the appropriate switches in ```config.sh```
 
 | Target  | Option  | Base framework |
 |---|---|---|
@@ -155,7 +155,7 @@ The following table summarises computer vision environments on top of deep learn
 
 The additional and production components target specific use cases, which are common in computer vision research and industry.
 
-Installation of additional and production components are performed in the same fashion, as frameworks. Say, to install FFmpeg, first the option has to be set
+Installation of additional and production components is performed in the same fashion, as frameworks. Say, to install FFmpeg, first the option has to be set
 
 ```
 BUILD_FFMPEG=1
@@ -164,7 +164,7 @@ BUILD_FFMPEG=1
 and then ```install.sh``` ran
 
 ```
-bash -i install_cudnn.sh
+bash -i install.sh
 ```
 
 The additional components include
@@ -178,7 +178,7 @@ The following table summarises additional components and their switch options
 | Target  | Option |
 |---|---|
 | Dataset Converters | INSTALL_DATASET_CONVERTERS |
-| FFMpeg| BUILD_FFMPEG |
+| FFmpeg| BUILD_FFMPEG |
 | OpenVINO | BUILD_OPENVINO |
 
 <b>Note.</b> ffmpeg executable is being searched by torchvision's setup script. If you have FFmpeg installed before torchvision, you may face torchvision build issues.<br>
@@ -199,6 +199,14 @@ The following table summarises production components and their switch options
 | Qt| INSTALL_QT |
 
 <b>Note.</b> CryptoPP is being built from source, Qt is not.
+
+### Activating built workspace
+
+To activate built workspace, source ``LIBS_BASE/setup.sh`` script, by default located in ```WORKSPACE_BASE/libs```
+
+```
+source $LIBS_BASE/setup.sh
+```
 
 ## Notes on base components
 
@@ -227,6 +235,6 @@ The expected contribution conditions are
 
 <ul>
 <li> you agree, that your contributions are MIT-licensed
-<li> contributed code is written from scratch and does not havve parts copied from other repositories.
+<li> contributed code is written from scratch and does not have parts copied from other repositories.
 </ul>
 
