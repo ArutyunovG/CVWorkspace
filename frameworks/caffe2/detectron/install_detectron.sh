@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone --recursive https://github.com/facebookresearch/Detectron.git
+git clone --recursive $DETECTRON_URL -b DETECTRON_VERSION
 python -m pip install -r Detectron/requirements.txt
 cd Detectron && make -j$(nproc)
 echo 'export PYTHONPATH=$PYTHONPATH:$LIBS_BASE/caffe2/detectron' >> $SETUP_SCRIPT

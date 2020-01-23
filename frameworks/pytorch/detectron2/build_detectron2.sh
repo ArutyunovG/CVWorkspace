@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone --recursive http://github.com/facebookresearch/detectron2.git
+git clone --recursive http://github.com/facebookresearch/detectron2.git -b $DETECTRON2_VERSION
 cd detectron2
 python -m pip install --editable .
 

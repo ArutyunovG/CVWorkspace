@@ -1,7 +1,7 @@
 #!/bin/bash
 
 git clone --recursive https://github.com/pytorch/pytorch.git
-cd pytorch && git checkout v1.2.0 && git submodule update --recursive --init
+cd pytorch && git checkout v$CAFFE2_VERSION && git submodule update --recursive --init
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install \
          -DUSE_FBGEMM=OFF \

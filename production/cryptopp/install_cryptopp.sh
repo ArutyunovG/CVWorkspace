@@ -1,9 +1,9 @@
 #!/bin/bash
 
 git clone --recursive https://github.com/weidai11/cryptopp.git
-cd cryptopp && git checkout CRYPTOPP_8_2_0 && cd ..
+cd cryptopp && git checkout CRYPTOPP_$(echo $CRYPTOPP_VERSION | sed 's/\./_/g') && cd ..
 git clone https://github.com/noloader/cryptopp-cmake.git
-cd cryptopp-cmake git checkout CRYPTOPP_8_2_0 && cd ..
+cd cryptopp-cmake git checkout CRYPTOPP_$(echo $CRYPTOPP_VERSION | sed 's/\./_/g') && cd ..
 cp cryptopp-cmake/CMakeLists.txt cryptopp-cmake/cryptopp-config.cmake cryptopp
 rm -rf cryptopp-cmake
 cd cryptopp && mkdir build && cd build

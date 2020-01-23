@@ -5,7 +5,7 @@ mkdir -p $LIBS_BASE
 git clone --recursive https://github.com/opencv/opencv.git
 cd opencv
 
-git checkout 4.1.1
+git checkout $OPENCV4_VERSION
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install -DWITH_OPENCL=OFF -DWITH_CUDA=OFF
 make -j$(nproc) install
@@ -14,7 +14,7 @@ cd ../.. && mv opencv/build/install $LIBS_BASE/opencv4 && rm -rf opencv
 git clone --recursive https://github.com/opencv/opencv.git
 cd opencv
 
-git checkout 3.4.7
+git checkout $OPENCV3_VERSION
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install -DWITH_OPENCL=OFF -DWITH_CUDA=OFF
 make -j$(nproc) install

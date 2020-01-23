@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone https://github.com/tensorflow/models.git
+git clone https://github.com/tensorflow/models.git -b $TF_OD_API_VERSION
 
 cd models/research
 protoc object_detection/protos/*.proto --python_out=.

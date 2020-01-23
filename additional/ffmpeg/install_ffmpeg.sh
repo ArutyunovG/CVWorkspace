@@ -1,7 +1,7 @@
 #!/bin/bash
 
 git clone --recursive https://github.com/FFmpeg/FFmpeg.git
-cd FFmpeg && git checkout release/4.2
+cd FFmpeg && git checkout release/$FFMPEG_VERSION
 ./configure --disable-static --enable-shared --disable-gpl --disable-x86asm --prefix=install
 make -j$(nproc) install
 cd .. && mv FFmpeg/install $LIBS_BASE/ffmpeg && rm -rf FFmpeg

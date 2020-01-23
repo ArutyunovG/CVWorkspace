@@ -3,7 +3,7 @@
 mkdir -p $LIBS_BASE
 
 git clone --recursive https://github.com/xianyi/OpenBLAS.git
-cd OpenBLAS && git checkout v0.3.6
+cd OpenBLAS && git checkout v$OPENBLAS_VERSION
 make -j$(nproc)
 make -j$(nproc) install DESTDIR=install
 cd .. && mv OpenBLAS/install/opt/OpenBLAS $LIBS_BASE/openblas && rm -rf OpenBLAS

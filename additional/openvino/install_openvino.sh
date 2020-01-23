@@ -18,7 +18,7 @@
 cd $LIBS_BASE
 
 git clone --recursive https://github.com/opencv/dldt.git
-cd dldt && git checkout 2019 && git submodule update --recursive --init
+cd dldt && git checkout $OPENVINO_VERSION && git submodule update --recursive --init
 cd inference-engine && mkdir build && cd build
 
 #

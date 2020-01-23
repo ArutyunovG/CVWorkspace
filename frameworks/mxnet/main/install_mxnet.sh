@@ -1,7 +1,7 @@
 #!/bin/bash
 
 git clone --recursive https://github.com/apache/incubator-mxnet.git
-cd incubator-mxnet && git checkout 1.5.0 && git submodule update --recursive --init
+cd incubator-mxnet && git checkout $MXNET_VERSION && git submodule update --recursive --init
 mkdir -p build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install \
          -DCMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc \

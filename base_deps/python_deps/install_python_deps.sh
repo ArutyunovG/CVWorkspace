@@ -5,7 +5,7 @@
 #
 sudo apt install -yq python3 python3-pip
 
-python_release=3.7
+python_release=$PYTHON_VERSION
 
 sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt update
