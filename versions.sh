@@ -3,25 +3,25 @@
 # ===== BASE_DEPS =====
 
 : ${BAZEL_VERSION:=0.26.1}
-: ${BOOST_VERSION:=1.69.0}
+: ${BOOST_VERSION:=1.72.0}
 : ${CMAKE_VERSION:=3.16.3}
 
 # no versions supported for cocoapi
 : ${COCOAPI_VERSION:=master}
 
 : ${GFLAGS_VERSION:=2.2.2}
-: ${GLOG_VERSION:=0.3.5}
+: ${GLOG_VERSION:=0.4.0}
 : ${GTEST_VERSION:=1.10.0}
-: ${HDF5_VERSION:=1.10.5}
+: ${HDF5_VERSION:=1.10.6}
 : ${LEVELDB_VERSION:=1.20}
 : ${LMDB_VERSION:=0.9.24}
-: ${OPENBLAS_VERSION:=0.3.6}
+: ${OPENBLAS_VERSION:=0.3.7}
 # Caffe does not support OpenCV4
-: ${OPENCV3_VERSION:=3.4.7}
-: ${OPENCV4_VERSION:=4.1.1}
-: ${PROTOBUF_VERSION:=3.9.1}
+: ${OPENCV3_VERSION:=3.4.9}
+: ${OPENCV4_VERSION:=4.2.0}
+: ${PROTOBUF_VERSION:=3.11.2}
 : ${PYTHON_VERSION:=3.7}
-: ${SNAPPY_VERSION:=1.1.7}
+: ${SNAPPY_VERSION:=1.1.8}
 : ${ZLIB_VERSION:=1.2.11}
 
 # ===== FRAMEWORKS =====
@@ -49,7 +49,7 @@
 # MXNet
 
 : ${MXNET_VERSION:=1.5.0}
-: ${GLUONCV_VERSION:=0.4.0}
+: ${GLUONCV_VERSION:=0.6.0}
 
 # Pytorch
 
