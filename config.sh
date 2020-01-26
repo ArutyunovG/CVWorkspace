@@ -17,7 +17,7 @@ export UTILS_BASE=$UTILS_BASE
 
 #
 # this script will be used to setup environment
-# 
+#
 SETUP_SCRIPT=$LIBS_BASE/setup.sh
 
 # this sets virtualenv folder for pipenv

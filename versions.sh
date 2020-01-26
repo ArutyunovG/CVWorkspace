@@ -65,7 +65,7 @@
 
 # Tensorflow
 
-: ${TENSORFLOW_VERSION:=1.14}
+: ${TENSORFLOW_VERSION:=1.15}
 
 # TF OD API does support actual versioning
 # But it is not updated that much nowadays
