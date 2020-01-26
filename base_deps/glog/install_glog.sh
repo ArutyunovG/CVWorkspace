@@ -3,7 +3,7 @@
 mkdir -p $LIBS_BASE
 
 git clone --recursive https://github.com/google/glog.git
-cd glog && git checkout v0.3.5
+cd glog && git checkout v$GLOG_VERSION
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install \
 	 -DBUILD_SHARED_LIBS=ON \

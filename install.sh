@@ -3,6 +3,7 @@
 ROOT_DIR="$(dirname "$(readlink -f "$0")")"
 
 source $ROOT_DIR/config.sh
+source $ROOT_DIR/versions.sh
 source $ROOT_DIR/util.sh
 source $ROOT_DIR/create_setup_script.sh
 

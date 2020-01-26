@@ -1,7 +1,7 @@
 #!/bin/bash
 
-git clone https://github.com/weiliu89/caffe.git
-cd caffe && git checkout ssd
+git clone $CAFFE_SSD_URL
+cd caffe && git checkout $CAFFE_SSD_VERSION
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install \
     -DBUILD_python=ON \

@@ -1,5 +1,5 @@
 git clone --recursive https://bitbucket.hdfgroup.org/scm/hdffv/hdf5.git
-cd hdf5 && git checkout hdf5-1_10_5
+cd hdf5 && git checkout hdf5-$(echo $HDF5_VERSION | sed 's/\./_/g')
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install \
          -DHDF5_ENABLE_Z_LIB_SUPPORT=ON \

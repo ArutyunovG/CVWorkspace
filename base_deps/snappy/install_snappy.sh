@@ -3,7 +3,7 @@
 mkdir -p $LIBS_BASE
 
 git clone --recursive https://github.com/google/snappy.git
-cd snappy && git checkout 1.1.7 && mkdir build && cd build
+cd snappy && git checkout $SNAPPY_VERSION && mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install \
          -DBUILD_SHARED_LIBS=ON
 make -j$(nproc) install

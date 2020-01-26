@@ -3,7 +3,7 @@
 mkdir -p $LIBS_BASE
 
 git clone --recursive https://github.com/gflags/gflags.git
-cd gflags && git checkout v2.2.2
+cd gflags && git checkout v$GFLAGS_VERSION
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install \
          -DBUILD_SHARED_LIBS=ON

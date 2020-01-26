@@ -1,7 +1,7 @@
 #!/bin/bash
 
 git clone https://github.com/bvlc/caffe.git
-cd caffe && git checkout master
+cd caffe && git checkout $CAFFE_VERSION
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install \
     -DBUILD_python=ON \
