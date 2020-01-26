@@ -28,6 +28,7 @@ The collection of scripts is organised as follows
 1) Top level scripts<br><br>
 ```config.sh``` &ndash; configuration script<br>
 ``` install.sh``` &ndash; the main installation script<br>
+``` versions.sh``` &ndash; specifies versions of libraries to be installed<br>
   
 2) Folders<br><br>
 ``` base deps ``` &ndash; contains scripts which install base dependencies of the frameworks to be built<br>
