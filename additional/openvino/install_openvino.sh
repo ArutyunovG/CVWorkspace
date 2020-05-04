@@ -19,7 +19,7 @@ cd $LIBS_BASE
 
 git clone --recursive https://github.com/opencv/dldt.git
 cd dldt && git checkout $OPENVINO_VERSION && git submodule update --recursive --init
-cd inference-engine && mkdir build && cd build
+mkdir build && cd build
 
 #
 # ENABLE_MKL_DNN -- for Intel CPUs
@@ -29,7 +29,11 @@ cd inference-engine && mkdir build && cd build
 cmake .. \
     -DENABLE_MKL_DNN=ON \
     -DENABLE_CLDNN=ON \
-    -DENABLE_VPU=OFF
+    -DENABLE_VPU=OFF \
+    -DNGRAPH_USE_SYSTEM_PROTOBUF=ON \
+    -DProtobuf_INCLUDE_DIR=$LIBS_BASE/protobuf/include \
+    -DProtobuf_LIBRARY=$LIBS_BASE/protobuf/lib/libprotobuf.so \
+    -DCMAKE_CXX_FLAGS="-Wno-deprecated-declarations"
 
 make -j$(nproc)
 

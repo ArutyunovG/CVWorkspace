@@ -142,7 +142,3 @@ BUILD_FFMPEG=0
 #
 BUILD_CRYPTOPP=0
 
-#
-# Qt can be used to implement GUI
-#
-INSTALL_QT=0

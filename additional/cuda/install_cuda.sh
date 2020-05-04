@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CUDA_VERSION=10.1
+CUDA_VERSION=10.2
 
 sudo apt update
 sudo apt install -yq wget software-properties-common 
