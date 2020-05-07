@@ -68,13 +68,13 @@ CUDA is being installed separately from the main script ```install.sh```.<br>
 sudo bash -i install_cuda.sh
 ```
 
-It will install CUDA 10.1 and appropriate nvidia driver at the same time.<br>
+It will install CUDA 10.2 and appropriate nvidia driver at the same time.<br>
 Please, restart your computer afterwards for the changes to take effect.<br>
 
 <h4>cuDNN</h4>
 
 Installing cuDNN is perhaps the most inconvinient job for the CVWorksapce user.<br> 
-Please, download the latest cudnn archive compatible with CUDA 10.1 from official NVIDIA <a href = "https://developer.nvidia.com/rdp/cudnn-archive">web site</a>. NVIDIA wants users to be logged in before accessing it. 
+Please, download the latest cudnn archive compatible with CUDA 10.2 from official NVIDIA <a href = "https://developer.nvidia.com/rdp/cudnn-download">web site</a>. NVIDIA wants users to be logged in before accessing it. 
 
 Once cuDNN archive has been downloaded, please modify ```install_cudnn.sh```, so that the variable ```CUDNN_ARCHIVE``` referes to your cuDNN archive. 
 Afterwards the installation is performed with the command
@@ -93,7 +93,7 @@ BUILD_BASE_DEPS=1
 Installing base dependencies is performed with running the command
 
 ```
-sudo bash -i install.sh
+bash -i install.sh
 ```
 
 ### Frameworks
@@ -184,12 +184,11 @@ The following table summarises additional components and their switch options
 
 <b>Note.</b> ffmpeg executable is being searched by torchvision's setup script. If you have FFmpeg installed before torchvision, you may face torchvision build issues.<br>
 
-<b>Note.</b> It is recommended to use official OpenVINO installers, provided by Intel. One cannot reproduce them from source, because of lack of special tools. OpenVINO build passes with GCC 5.4.0, shipped with Ubuntu 16.04. Trying to build it with other compiler may cause build errors.<br>
+<b>Note.</b> It is recommended to use official OpenVINO installers, provided by Intel. One cannot reproduce them from source, because of lack of special tools.<br>
 
 The production components include
 
-1) CryptoPP &ndash; a C++ library to encrypt your trained models, when deploying them in production
-2) Qt &ndash; a huge C++ framework, in particular targeting GUI implementation of desktop applcations.
+CryptoPP &ndash; a C++ library to encrypt your trained models, when deploying them in production
 
 The following table summarises production components and their switch options
 
@@ -197,9 +196,6 @@ The following table summarises production components and their switch options
 | Target  | Option |
 |---|---|
 | CryptoPP | BUILD_CRYPTOPP |
-| Qt| INSTALL_QT |
-
-<b>Note.</b> CryptoPP is being built from source, Qt is not.
 
 ### Activating built workspace
 

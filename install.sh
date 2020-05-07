@@ -78,7 +78,3 @@ fi
 if [ "$BUILD_CRYPTOPP" -eq "1" ]; then
     source $ROOT_DIR/production/cryptopp/install_cryptopp.sh
 fi
-
-if [ "$INSTALL_QT" -eq "1" ]; then
-    source $ROOT_DIR/production/qt/install_qt.sh
-fi

@@ -5,6 +5,9 @@ cd tensorflow
 
 git checkout r$TENSORFLOW_VERSION
 
+# remove this when TF 1.x handles CUDA 10.2
+git apply $ROOT_DIR/frameworks/tensorflow/main/tf_cuda10_2.patch
+
 export PYTHON_BIN_PATH=$(which python)
 export PYTHON_LIB_PATH="$($PYTHON_BIN_PATH -c 'from distutils.sysconfig import get_python_lib; print(get_python_lib())')"
 export TF_NEED_CUDA=1
