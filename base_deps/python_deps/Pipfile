@@ -26,6 +26,8 @@ onnx = "*"
 portalocker = "*"
 setuptools = "==45.0"
 ipykernel = "*"
+keras_applications = "*"
+keras_preprocessing = "*"
 contextlib2 = "*"
 lxml = "*"
 
