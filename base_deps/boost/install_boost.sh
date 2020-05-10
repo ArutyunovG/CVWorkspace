@@ -7,7 +7,7 @@ BOOST_VERSION_UNDERSCORE=$(echo $BOOST_VERSION | sed 's/\./_/g')
 py_include_dir=$(python -c 'from sysconfig import get_paths as gp; print(gp()["include"])')
 export CPLUS_INCLUDE_PATH="$CPLUS_INCLUDE_PATH:"$py_include_dir
 
-wget http://sourceforge.net/projects/boost/files/boost/$BOOST_VERSION/boost_$BOOST_VERSION_UNDERSCORE.tar.gz
+wget https://dl.bintray.com/boostorg/release/$BOOST_VERSION/source/boost_$BOOST_VERSION_UNDERSCORE.tar.gz
 tar -zxvf boost_$BOOST_VERSION_UNDERSCORE.tar.gz && rm boost_$BOOST_VERSION_UNDERSCORE.tar.gz
 cd boost_$BOOST_VERSION_UNDERSCORE
 ./bootstrap.sh --with-python=$(which python)
