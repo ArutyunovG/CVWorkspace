@@ -144,7 +144,7 @@ The following table summarises computer vision environments on top of deep learn
 |---|---|---|
 | Detectron (deprected) | WITH_DETECTRON | Caffe2 |
 | Detectron2  | WITH_TORCHVISION, WITH_FVCORE, WITH_DETECTRON2 | Pytorch |
-|  GluonCV | WITH_GLUON | MXNet |
+|  GluonCV | WITH_GLUONCV | MXNet |
 | TF OD API  | WITH_TF_OD_API  | TensorFlow |
 
 ### Additional and production components
@@ -224,7 +224,7 @@ For more advanced understanding of the installed CVWorkspace structure, please r
 Note. The options in the files described here are for advanced research development and not recommended to change if you feel unconfident with their meaning.
 
 Deep learning frameworks are often changed by the user in projects, where some new techniques are invented.
-If you are doing serious research or production development, you know, that reproducibility of results is a must. That includes reproducibility of the envrioenment, where the result were achieved. Given how much changes are often done and in different tools this environment reproducibility task is often not trivial.
+If you are doing serious research or production development, you know, that reproducibility of results is a must. That includes reproducibility of the environment, where the result were achieved. Given how much changes are often done and in different tools this environment reproducibility task is often not trivial.
 
 To solve it, the advanced configuration files are presented in the folder
 
@@ -233,7 +233,9 @@ frameworks/advanced_config
 ```
 ```set_checkout_targets.sh``` &ndash; allows to checkout concrete branch and even commit by its hash<br>
 ``` set_patches.sh``` &ndash; allows to systematize your patches done to the framework during development on top of the branch/commit hash<br>
-``` set_urls.sh``` &ndash; allows to use your private forks as a base framework url in case of serious changes<br>
+``` set_urls.sh``` &ndash; allows to use your private forks as a base framework url in case of serious changes.
+
+To reproduce concrete python environment, it can be specified with Pipfile, which is passed to CVWorkspace with ```WITH_PIPFILE``` option.
 
 ## Contributing
 
