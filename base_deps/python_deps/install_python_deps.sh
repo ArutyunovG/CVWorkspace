@@ -26,7 +26,19 @@ sudo python$python_release -m pip install  pipenv
 
 cd $BASE_DEPS/python_deps
 
+if [ -z "$WITH_PIPFILE" ]; then
+    source $(pwd)/gen_pipfile.sh
+else
+    cp "$WITH_PIPFILE" $(pwd)
+    pipfile_name=$(echo $(git ls-files --others --exclude-standard))
+    if [ "$pipfile_name" != "Pipfile" ]; then
+        mv $pipfile_name Pipfile
+    fi
+fi
+
 python$python_release -m pipenv --python=$(which python$python_release) install --skip-lock
+
+rm $(echo $(git ls-files --others --exclude-standard))
 
 cd $ROOT_DIR
 

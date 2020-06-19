@@ -1,6 +1,13 @@
 #!/bin/bash
 
-git clone https://github.com/tensorflow/models.git -b $TF_OD_API_VERSION
+git clone $TF_OD_API_URL 
+cd models && git checkout $TF_OD_API_CHECKOUT_TARGET
+
+if [ -n "$TF_OD_API_PATCH" ]; then
+    git apply $TF_OD_API_PATCH
+fi
+
+cd ..
 
 cd models/research
 protoc object_detection/protos/*.proto --python_out=.

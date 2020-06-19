@@ -32,16 +32,12 @@
 : ${CAFFE_VERSION:=master}
 
 # install ssd caffe fork from ssd branch
-: ${CAFFE_SSD_URL:=https://github.com/weiliu89/caffe.git}
 : ${CAFFE_SSD_VERSION:=ssd}
 
 # Caffe2
 
 # actually this is Pytorch release, since Caffe2 is in the Pytorch repo
 : ${CAFFE2_VERSION:=1.5.0}
-
-# unlike detectron2, people often change original detectron, so provide url
-: ${DETECTRON_URL:=https://github.com/facebookresearch/Detectron.git}
 
 # install detectron from master branch
 : ${DETECTRON_VERSION:=master}
@@ -58,8 +54,9 @@
 # apex github branch
 : ${APEX_VERSION:=master}
 
-# detectron2 github branch
-: ${DETECTRON2_VERSION:=master}
+: ${FVCORE_VERSION:=master}
+
+: ${DETECTRON2_VERSION:=0.1.2}
 
 : ${TORCHVISION_VERSION:=0.6.0}
 

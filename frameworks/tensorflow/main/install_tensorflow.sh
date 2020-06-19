@@ -1,12 +1,13 @@
 #!/bin/bash
 
-git clone https://github.com/tensorflow/tensorflow.git
+git clone $TENSORFLOW_URL
 cd tensorflow
 
-git checkout r$TENSORFLOW_VERSION
+git checkout $TENSORFLOW_CHECKOUT_TARGET
 
-# remove this when TF 1.x handles CUDA 10.2
-git apply $ROOT_DIR/frameworks/tensorflow/main/tf_cuda10_2.patch
+if [ -n "$TENSORFLOW_PATCH" ]; then
+    git apply $TENSORFLOW_PATCH
+fi
 
 export PYTHON_BIN_PATH=$(which python)
 export PYTHON_LIB_PATH="$($PYTHON_BIN_PATH -c 'from distutils.sysconfig import get_python_lib; print(get_python_lib())')"

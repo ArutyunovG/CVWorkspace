@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if test -f "$SETUP_SCRIPT"; then
-	return
+    return
 fi
 
 mkdir -p $(dirname "$SETUP_SCRIPT")
