@@ -44,7 +44,7 @@ The workability of the scripts was tested only on clear Ubuntu 16.04 or Ubuntu 1
 <h4>Some of the core configuration variables</h4>
 
 ```config.sh``` has the core variable ```WORKSPACE_BASE``` which specifies the installation folder for your frameworks and their dependencies.<br>
-The other important variable in ```config.sh``` to note is ```SOURCE_SETUP_SCRIPT_IN_BASHRC```. Set it to 1, if you want the CVWorkspace environment to be immediately initialised on every new bash terminal.
+The other important variable in ```config.sh``` to note is ```SOURCE_SETUP_SCRIPT_IN_BASHRC```. Export it to 1, if you want the CVWorkspace environment to be immediately initialised on every new bash terminal.
 
 <h4>CVWorkspace installation steps</h4>
 
@@ -84,10 +84,10 @@ sudo bash -i install_cudnn.sh
 ```
 ### Base dependencies
 
-Modify ```CVWorkspace/config.sh```, so that option ```BUILD_BASE_DEPS``` is set
+To install base dependencies export ```WITH_BASE_DEPS``` with value 1
 
 ```
-BUILD_BASE_DEPS=1
+export WITH_BASE_DEPS=1
 ```
 
 Installing base dependencies is performed with running the command
@@ -98,13 +98,13 @@ bash -i install.sh
 
 ### Frameworks
 
-To install a deep learning framework, say Pytorch, user switches its option in ```config.sh``` to 1
+To install a deep learning framework, say Pytorch, export its option variable with value 1
 
 ```
-BUILD_PYTORCH=1
+export WITH_PYTORCH=1
 ```
 
-and runs
+and run
 
 ```
 bash -i install.sh
@@ -113,14 +113,9 @@ bash -i install.sh
 The same applies for the framework-specific computer vision ecosystems, say Detectron2. First the appropriate variables are set
 
 ```
-# Build torchvision
-BUILD_TORCHVISION=1
-
-# Instal fvcore
-INSTALL_FVCORE=1
-
-# Build Detectron
-BUILD_DETECTRON2=1
+export WITH_TORCHVISION=1
+export WITH_FVCORE=1
+export WITH_DETECTRON2=1
 ```
 
 and then ```install.sh``` is called
@@ -130,27 +125,27 @@ bash -i install.sh
 ```
 
 
-The following table summarises frameworks and the appropriate switches in the ```config.sh```
+The following table summarises frameworks and the appropriate switches
 
 | Target  | Option  |
 |---|---|
-|  Caffe | BUILD_CAFFE |
-| Caffe SSD  | BUILD_CAFFE_SSD  |
-| Caffe2  |  BUILD_CAFFE2 |
-|  MXNet | BUILD_MXNET |
-| Pytorch  | BUILD_PYTORCH  |
-| Tensorflow  |  BUILD_TENSORFLOW |
+|  Caffe | WITH_CAFFE |
+| Caffe SSD  | WITH_CAFFE_SSD  |
+| Caffe2  |  WITH_CAFFE2 |
+|  MXNet | WITH_MXNET |
+| Pytorch  | WITH_PYTORCH  |
+| Tensorflow  |  WITH_TENSORFLOW |
 
-<b>Note.</b> Please note, that Python bindings of Caffe2 are automatically installed with Pytorch and ```BUILD_PYTORCH``` is the recommended option to install Caffe2. ```BUILD_CAFFE2``` option is separated to provide CMake and C++ oriented Caffe2 build, which can be useful for production deployment.
+<b>Note.</b> Please note, that Python bindings of Caffe2 are automatically installed with Pytorch and ```WITH_PYTORCH``` is the recommended option to install Caffe2. ```WITH_CAFFE2``` option is separated to provide CMake and C++ oriented Caffe2 build, which can be useful for production deployment.
 
-The following table summarises computer vision environments on top of deep learning frameworks and the appropriate switches in ```config.sh```
+The following table summarises computer vision environments on top of deep learning frameworks and the appropriate switches
 
 | Target  | Option  | Base framework |
 |---|---|---|
-| Detectron (deprected) | BUILD_DETECTRON | Caffe2 |
-| Detectron2  | BUILD_TORCHVISION, INSTALL_FVCORE, BUILD_DETECTRON2 | Pytorch |
-|  GluonCV | BUILD_GLUON | MXNet |
-| TF OD API  | BUILD_TF_OD_API  | TensorFlow |
+| Detectron (deprected) | WITH_DETECTRON | Caffe2 |
+| Detectron2  | WITH_TORCHVISION, WITH_FVCORE, WITH_DETECTRON2 | Pytorch |
+|  GluonCV | WITH_GLUON | MXNet |
+| TF OD API  | WITH_TF_OD_API  | TensorFlow |
 
 ### Additional and production components
 
@@ -159,7 +154,7 @@ The additional and production components target specific use cases, which are co
 Installation of additional and production components is performed in the same fashion, as frameworks. Say, to install FFmpeg, first the option has to be set
 
 ```
-BUILD_FFMPEG=1
+export WITH_FFMPEG=1
 ```
 
 and then ```install.sh``` ran
@@ -178,9 +173,9 @@ The following table summarises additional components and their switch options
 
 | Target  | Option |
 |---|---|
-| Dataset Converters | INSTALL_DATASET_CONVERTERS |
-| FFmpeg| BUILD_FFMPEG |
-| OpenVINO | BUILD_OPENVINO |
+| Dataset Converters | WITH_DATASET_CONVERTERS |
+| FFmpeg| WITH_FFMPEG |
+| OpenVINO | WITH_OPENVINO |
 
 <b>Note.</b> ffmpeg executable is being searched by torchvision's setup script. If you have FFmpeg installed before torchvision, you may face torchvision build issues.<br>
 
@@ -195,7 +190,7 @@ The following table summarises production components and their switch options
 
 | Target  | Option |
 |---|---|
-| CryptoPP | BUILD_CRYPTOPP |
+| CryptoPP | WITH_CRYPTOPP |
 
 ### Activating built workspace
 
@@ -223,6 +218,22 @@ All the C++ deps, as well as CMake and Bazel are locally installed in ```WORKSPA
 Such separation of environment allows user to choose different python packages, C++ libraries and build tools between different installations of CVWorkspace.
 
 For more advanced understanding of the installed CVWorkspace structure, please refer to file ```LIBS_BASE/setup.sh```.
+
+## Advanced frameworks configuration
+
+Note. The options in the files described here are for advanced research development and not recommended to change if you feel unconfident with their meaning.
+
+Deep learning frameworks are often changed by the user in projects, where some new techniques are invented.
+If you are doing serious research or production development, you know, that reproducibility of results is a must. That includes reproducibility of the envrioenment, where the result were achieved. Given how much changes are often done and in different tools this environment reproducibility task is often not trivial.
+
+To solve it, the advanced configuration files are presented in the folder
+
+```
+frameworks/advanced_config
+```
+```set_checkout_targets.sh``` &ndash; allows to checkout concrete branch and even commit by its hash<br>
+``` set_patches.sh``` &ndash; allows to systematize your patches done to the framework during development on top of the branch/commit hash<br>
+``` set_urls.sh``` &ndash; allows to use your private forks as a base framework url in case of serious changes<br>
 
 ## Contributing
 

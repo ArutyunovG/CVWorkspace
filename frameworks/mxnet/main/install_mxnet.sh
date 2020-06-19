@@ -1,14 +1,19 @@
 #!/bin/bash
 
-git clone --recursive https://github.com/apache/incubator-mxnet.git
-cd incubator-mxnet && git checkout $MXNET_VERSION && git submodule update --recursive --init
+git clone --recursive $MXNET_URL
+cd incubator-mxnet && git checkout $MXNET_CHECKOUT_TARGET && git submodule update --recursive --init
+
+if [ -n "$MXNET_PATCH" ]; then
+    git apply $MXNET_PATCH
+fi
+
 mkdir -p build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install \
          -DCMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc \
          -DUSE_LAPACK=OFF \
          -DCUDA_ARCH_LIST="$MXNET_CUDA_ARCH" 
 
-if [ "$ENABLE_TESTS" -eq "1" ]; then
+if [ "$ENABLE_TESTS" = "1" ]; then
     make -j$(nproc)
     ./tests/mxnet_unit_tests
 fi

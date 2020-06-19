@@ -1,7 +1,12 @@
 #!/bin/bash
 
-git clone https://github.com/bvlc/caffe.git
-cd caffe && git checkout $CAFFE_VERSION
+git clone $CAFFE_URL
+cd caffe && git checkout $CAFFE_CHECKOUT_TARGET
+
+if [ -n "$CAFFE_PATCH" ]; then
+    git apply $CAFFE_PATCH
+fi
+
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install \
     -DBUILD_python=ON \
@@ -23,7 +28,7 @@ cmake .. -DCMAKE_INSTALL_PREFIX=install \
     -DCMAKE_CXX_FLAGS="-std=c++11 -pthread -Wno-deprecated-declarations" \
     -DPYTHON_EXECUTABLE=$(which python)
 
-if [ "$ENABLE_TESTS" -eq "1" ]; then
+if [ "$ENABLE_TESTS" = "1" ]; then
     make -j$(nproc) runtest
 fi
 make -j$(nproc) install
