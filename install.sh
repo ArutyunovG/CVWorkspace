@@ -2,6 +2,8 @@
 
 ROOT_DIR="$(dirname "$(readlink -f "$0")")"
 
+source $ROOT_DIR/utils/checkout_cvworkspace.sh
+
 source $ROOT_DIR/config.sh
 source $ROOT_DIR/versions.sh
 source $ROOT_DIR/utils/prepare_compute_caps.sh

@@ -221,7 +221,7 @@ For more advanced understanding of the installed CVWorkspace structure, please r
 
 ## Advanced frameworks configuration
 
-Note. The options in the files described here are for advanced research development and not recommended to change if you feel unconfident with their meaning.
+<b>Note.</b> The options in the files described here are for advanced research development and not recommended to change if you feel unconfident with their meaning.
 
 Deep learning frameworks are often changed by the user in projects, where some new techniques are invented.
 If you are doing serious research or production development, you know, that reproducibility of results is a must. That includes reproducibility of the environment, where the result were achieved. Given how much changes are often done and in different tools this environment reproducibility task is often not trivial.
@@ -236,6 +236,10 @@ frameworks/advanced_config
 ``` set_urls.sh``` &ndash; allows to use your private forks as a base framework url in case of serious changes.
 
 To reproduce concrete python environment, it can be specified with Pipfile, which is passed to CVWorkspace with ```WITH_PIPFILE``` option.
+
+To specify concrete CVWorkspace revision, which was used to generate the experiment environment, please export ```CVWORKSPACE_CHECKOUT_TARGET``` variable.
+
+Sometimes CVWorkspace can be useful for the experiment environment specification, but lacks some functionality. One can pass needed modifications as a patch on top of ```CVWORKSPACE_CHECKOUT_TARGET``` by exporting ```CVWORKSPACE_PATCH``` variable.
 
 ## Contributing
 
