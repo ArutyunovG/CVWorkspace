@@ -40,6 +40,7 @@ echo 'keras_applications = "*"' >> $PIPFILE
 echo 'keras_preprocessing = "*"' >> $PIPFILE
 echo 'contextlib2 = "*"' >> $PIPFILE
 echo 'lxml = "*"' >> $PIPFILE
+echo 'tf_slim = "*"' >> $PIPFILE
 
 echo '[requires]' >> $PIPFILE
 echo 'python_version = "'$PYTHON_VERSION'"' >> $PIPFILE
