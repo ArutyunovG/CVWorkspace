@@ -28,3 +28,9 @@
 : ${WITH_OPENBLAS:=$WITH_BASE_DEPS}
 : ${WITH_SNAPPY:=$WITH_BASE_DEPS}
 : ${WITH_GTEST:=$WITH_BASE_DEPS}
+
+# allow passing relative path to a pipfile
+# this is utility
+if [ -n "$WITH_PIPFILE" ]; then
+    WITH_PIPFILE=$(realpath $WITH_PIPFILE)
+fi
