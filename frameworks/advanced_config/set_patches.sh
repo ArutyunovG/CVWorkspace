@@ -22,6 +22,7 @@
 : ${FVCORE_PATCH:=}
 : ${DETECTRON2_PATCH:=}
 : ${TORCHVISION_PATCH:=}
+: ${CLASSYVISION_PATCH:=}
 
 # Tensorflow
 
@@ -72,6 +73,10 @@ fi
 
 if [ -n "$DETECTRON2_PATCH" ]; then
     DETECTRON2_PATCH=$(realpath $DETECTRON2_PATCH)
+fi
+
+if [ -n "$CLASSYVISION_PATCH" ]; then
+    CLASSYVISION_PATCH=$(realpath $CLASSYVISION_PATCH)
 fi
 
 if [ -n "$TENSORFLOW_PATCH" ]; then

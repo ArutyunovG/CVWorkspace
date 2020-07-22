@@ -59,6 +59,10 @@ if [ "$WITH_DETECTRON2" = "1" ]; then
     source $ROOT_DIR/frameworks/pytorch/detectron2/build_detectron2.sh
 fi
 
+if [ "$WITH_CLASSYVISION" = "1" ]; then
+    source $ROOT_DIR/frameworks/pytorch/classyvision/install_classyvision.sh
+fi
+
 if [ "$WITH_TENSORFLOW" = "1" ]; then
     source $ROOT_DIR/frameworks/tensorflow/main/install_tensorflow.sh
 fi

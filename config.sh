@@ -99,11 +99,14 @@ export WORKON_HOME=$LIBS_BASE/pipenv/.venvs
 # Build apex
 : ${WITH_APEX:=0}
 
-# Instal fvcore
+# Install fvcore
 : ${WITH_FVCORE:=0}
 
 # Build Detectron
 : ${WITH_DETECTRON2:=0}
+
+# Install ClassyVision
+: ${WITH_CLASSYVISION:=0}
 
 #----------------------------------
 

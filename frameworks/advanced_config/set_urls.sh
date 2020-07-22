@@ -22,6 +22,7 @@
 : ${FVCORE_URL:=https://github.com/facebookresearch/fvcore}
 : ${DETECTRON2_URL:=http://github.com/facebookresearch/detectron2.git}
 : ${TORCHVISION_URL:=https://github.com/pytorch/vision.git}
+: ${CLASSYVISION_URL:=https://github.com/facebookresearch/ClassyVision.git}
 
 # Tensorflow
 

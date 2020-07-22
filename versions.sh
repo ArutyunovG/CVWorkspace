@@ -60,6 +60,8 @@
 
 : ${TORCHVISION_VERSION:=0.6.0}
 
+: ${CLASSYVISION_VERSION:=0.4.0}
+
 # Tensorflow
 
 : ${TENSORFLOW_VERSION:=1.15}
@@ -73,8 +75,6 @@
 : ${FFMPEG_VERSION:=4.2}
 
 : ${CRYPTOPP_VERSION:=8.2.0}
-
-: ${QT_VERSION:=5.12.0}
 
 # The only branch of Dataset-Converters
 : ${DATASET_CONVERTERS_VERSION:=master}
