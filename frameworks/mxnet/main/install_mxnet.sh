@@ -9,6 +9,7 @@ fi
 
 mkdir -p build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install \
+         -DCMAKE_BUILD_TYPE=$MXNET_BUILD_TYPE \
          -DCMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc \
          -DUSE_LAPACK=OFF \
          -DCUDA_ARCH_LIST="$MXNET_CUDA_ARCH" 

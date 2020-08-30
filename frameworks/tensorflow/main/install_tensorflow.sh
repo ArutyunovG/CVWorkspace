@@ -28,21 +28,22 @@ export TF_SET_ANDROID_WORKSPACE=0
 
 mkdir $LIBS_BASE/tensorflow
 
-bazel build --jobs $(nproc) --config=cuda //tensorflow:install_headers 
 cp -r bazel-bin/tensorflow/include $LIBS_BASE/tensorflow
 
-bazel clean
+if [ $TENSORFLOW_BUILD_TYPE = "Debug" ]; then
+    bazel build --jobs $(nproc) --config=cuda --copt="-O0" --copt="-g" //tensorflow/tools/pip_package:build_pip_package
+fi
 
-bazel build --jobs $(nproc) --config=cuda //tensorflow/tools/pip_package:build_pip_package
+if [ $TENSORFLOW_BUILD_TYPE = "RelWithDebInfo" ]; then
+    bazel build --jobs $(nproc) --config=cuda  --copt="-g" //tensorflow/tools/pip_package:build_pip_package 
+fi
+
+if [ $TENSORFLOW_BUILD_TYPE = "Release" ]; then
+    bazel build --jobs $(nproc) --config=cuda //tensorflow/tools/pip_package:build_pip_package
+fi
+
 ./bazel-bin/tensorflow/tools/pip_package/build_pip_package tmp/tensorflow_pkg
 
 python -m pip install tmp/tensorflow_pkg/tensorflow-$TENSORFLOW_VERSION*
-
-bazel clean
-
-bazel build --jobs $(nproc) --config=cuda //tensorflow:libtensorflow.so
-
-mkdir $LIBS_BASE/tensorflow/lib
-cp bazel-bin/tensorflow/libtensorflow* $LIBS_BASE/tensorflow/lib
 
 cd .. && rm -rf tensorflow

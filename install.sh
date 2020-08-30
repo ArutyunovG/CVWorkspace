@@ -8,6 +8,7 @@ source $ROOT_DIR/config.sh
 source $ROOT_DIR/versions.sh
 source $ROOT_DIR/utils/prepare_compute_caps.sh
 source $ROOT_DIR/utils/create_setup_script.sh
+source $ROOT_DIR/frameworks/advanced_config/set_build_types.sh
 source $ROOT_DIR/frameworks/advanced_config/set_checkout_targets.sh
 source $ROOT_DIR/frameworks/advanced_config/set_urls.sh
 source $ROOT_DIR/frameworks/advanced_config/set_patches.sh

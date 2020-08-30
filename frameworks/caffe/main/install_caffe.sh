@@ -8,7 +8,9 @@ if [ -n "$CAFFE_PATCH" ]; then
 fi
 
 mkdir build && cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=install \
+cmake .. \
+    -DCMAKE_BUILD_TYPE=$CAFFE_BUILD_TYPE \
+    -DCMAKE_INSTALL_PREFIX=install \
     -DBUILD_python=ON \
     -DCPU_ONLY=OFF \
     -DUSE_CUDNN=OFF \
@@ -33,6 +35,10 @@ if [ "$ENABLE_TESTS" = "1" ]; then
 fi
 make -j$(nproc) install
 cd ../.. && mv caffe/build/install $LIBS_BASE/caffe && rm -rf caffe
+
+if [ $CAFFE_BUILD_TYPE = "Debug" ]; then
+    mv $LIBS_BASE/caffe/python/caffe/_caffe-d.so $LIBS_BASE/caffe/python/caffe/_caffe.so
+fi
 
 echo 'export PATH=$PATH:$LIBS_BASE/caffe/bin' >> $SETUP_SCRIPT
 echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$LIBS_BASE/caffe/lib' >> $SETUP_SCRIPT
