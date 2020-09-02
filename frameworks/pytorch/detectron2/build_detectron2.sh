@@ -7,7 +7,17 @@ if [ -n "$DETECTRON2_PATCH" ]; then
     git apply $DETECTRON2_PATCH
 fi
 
-python -m pip install --editable .
+if [ $DETECTRON2_BUILD_TYPE = "Debug" ]; then
+    CFLAGS='-O0 -g' python -m pip install --editable .
+fi
+
+if [ $DETECTRON2_BUILD_TYPE = "RelWithDebInfo" ]; then
+    CFLAGS='-g' python -m pip install --editable .
+fi
+
+if [ $DETECTRON2_BUILD_TYPE = "Release" ]; then
+    CFLAGS='' python -m pip install --editable .
+fi
 
 cd .. && mkdir -p $LIBS_BASE/pytorch && mv detectron2 $LIBS_BASE/pytorch/detectron2
 

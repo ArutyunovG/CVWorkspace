@@ -8,21 +8,23 @@ if [ -n "$CAFFE2_PATCH" ]; then
 fi
 
 mkdir build && cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=install \
-         -DUSE_FBGEMM=OFF \
-         -DUSE_QNNPACK=OFF \
-         -DUSE_NNPACK=OFF \
-         -DUSE_OPENCV=ON \
-         -DUSE_LEVELDB=ON \
-         -DUSE_LMDB=ON \
-         -DUSE_GFLAGS=ON \
-         -DUSE_GLOG=ON \
-         -DUSE_GLOO=OFF \
-         -DSNAPPY_ROOT_DIR=$LIBS_BASE/snappy \
-         -DTORCH_CUDA_ARCH_LIST="$TORCH_CUDA_ARCH" \
-         -DBLAS=OpenBLAS \
-         -DBUILD_TEST=ON \
-         -DUSE_ROCM=OFF
+cmake .. \
+    -DCMAKE_BUILD_TYPE=$CAFFE2_BUILD_TYPE \
+    -DCMAKE_INSTALL_PREFIX=install \
+    -DUSE_FBGEMM=OFF \
+    -DUSE_QNNPACK=OFF \
+    -DUSE_NNPACK=OFF \
+    -DUSE_OPENCV=ON \
+    -DUSE_LEVELDB=ON \
+    -DUSE_LMDB=ON \
+    -DUSE_GFLAGS=ON \
+    -DUSE_GLOG=ON \
+    -DUSE_GLOO=OFF \
+    -DSNAPPY_ROOT_DIR=$LIBS_BASE/snappy \
+    -DTORCH_CUDA_ARCH_LIST="$TORCH_CUDA_ARCH" \
+    -DBLAS=OpenBLAS \
+    -DBUILD_TEST=ON \
+    -DUSE_ROCM=OFF
 
 if [ "$ENABLE_TESTS" = "1" ]; then
     make -j$(nproc)

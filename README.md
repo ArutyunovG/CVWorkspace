@@ -242,6 +242,8 @@ To specify concrete CVWorkspace revision, which was used to generate the experim
 
 Sometimes CVWorkspace can be useful for the experiment environment specification, but lacks some functionality. One can pass needed modifications as a patch on top of ```CVWORKSPACE_CHECKOUT_TARGET``` by exporting ```CVWORKSPACE_PATCH``` variable.
 
+<b>Note.</b> Additionally ```frameworks/advanced_config``` contains ```set_build_types.sh```. It defines variables to build frameworks and some ecosystems with debugging symbols to simplify understanding and debugging of complicated implementation details.
+
 ## Contributing
 
 CVWorkspace is intended to be non-commercial work with open source spirit and contributions are highly welcome.

@@ -9,10 +9,17 @@ fi
 
 if [ $PYTORCH_BUILD_TYPE = "Debug" ]; then
     export DEBUG=1
+    export REL_WITH_DEB_INFO=0
 fi
 
 if [ $PYTORCH_BUILD_TYPE = "RelWithDebInfo" ]; then
+    export DEBUG=0
     export REL_WITH_DEB_INFO=1
+fi
+
+if [ $PYTORCH_BUILD_TYPE = "Release" ]; then
+    export DEBUG=0
+    export REL_WITH_DEB_INFO=0
 fi
 
 export BLAS=OpenBLAS
