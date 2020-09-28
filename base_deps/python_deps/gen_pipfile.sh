@@ -17,7 +17,6 @@ echo '[dev-packages]' >> $PIPFILE
 
 echo '[packages]' >> $PIPFILE
 echo 'enum34 = "*"' >> $PIPFILE
-echo 'numpy = "*"' >> $PIPFILE
 echo 'scipy = "*"' >> $PIPFILE
 echo 'scikit-image = "*"' >> $PIPFILE
 echo 'networkx = "*"' >> $PIPFILE
@@ -41,6 +40,8 @@ echo 'keras_preprocessing = "*"' >> $PIPFILE
 echo 'contextlib2 = "*"' >> $PIPFILE
 echo 'lxml = "*"' >> $PIPFILE
 echo 'tf_slim = "*"' >> $PIPFILE
+echo 'pyyaml = "*"' >> $PIPFILE
+echo 'numpy = "<1.19"' >> $PIPFILE
 
 echo '[requires]' >> $PIPFILE
 echo 'python_version = "'$PYTHON_VERSION'"' >> $PIPFILE

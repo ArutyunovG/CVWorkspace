@@ -12,7 +12,7 @@
 
 # MXNet
 
-: ${MXNET_PATCH:=}
+: ${MXNET_PATCH:=$ROOT_DIR/frameworks/mxnet/main/mxnet17_cuda_11.patch}
 : ${GLUONCV_PATCH:=}
 
 # Pytorch
@@ -26,7 +26,7 @@
 
 # Tensorflow
 
-: ${TENSORFLOW_PATCH:=$ROOT_DIR/frameworks/tensorflow/main/tf_cuda10_2.patch}
+: ${TENSORFLOW_PATCH:=}
 : ${TF_OD_API_PATCH:=}
 
 

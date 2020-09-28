@@ -46,13 +46,6 @@ venv_bin_path=$WORKON_HOME/$(ls $WORKON_HOME)/bin
 
 source $venv_bin_path/activate
 
-#
-# pyyaml 3.12 is required in detectron
-# this version has problems with pipenv
-# so we install it separately after activation of environment
-#
-python -m pip install pyyaml==3.12
-
 python -m ipykernel install --name python-cv-workspace
 python -m pip install jupyter
 

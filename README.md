@@ -142,7 +142,6 @@ The following table summarises computer vision environments on top of deep learn
 
 | Target  | Option  | Base framework |
 |---|---|---|
-| Detectron (deprected) | WITH_DETECTRON | Caffe2 |
 | Detectron2  | WITH_TORCHVISION, WITH_FVCORE, WITH_DETECTRON2 | Pytorch |
 | ClassyVision  | WITH_TORCHVISION, WITH_FVCORE, WITH_CLASSYVISION | Pytorch |
 |  GluonCV | WITH_GLUONCV | MXNet |
