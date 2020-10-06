@@ -68,13 +68,13 @@ CUDA is being installed separately from the main script ```install.sh```.<br>
 sudo bash -i install_cuda.sh
 ```
 
-It will install CUDA 10.2 and appropriate nvidia driver at the same time.<br>
+It will install CUDA 11.0 and appropriate nvidia driver at the same time.<br>
 Please, restart your computer afterwards for the changes to take effect.<br>
 
 <h4>cuDNN</h4>
 
 Installing cuDNN is perhaps the most inconvinient job for the CVWorksapce user.<br> 
-Please, download the latest cudnn archive compatible with CUDA 10.2 from official NVIDIA <a href = "https://developer.nvidia.com/rdp/cudnn-download">web site</a>. NVIDIA wants users to be logged in before accessing it. 
+Please, download the latest cudnn archive compatible with CUDA 11.0 from official NVIDIA <a href = "https://developer.nvidia.com/rdp/cudnn-download">web site</a>. NVIDIA wants users to be logged in before accessing it. 
 
 Once cuDNN archive has been downloaded, please modify ```install_cudnn.sh```, so that the variable ```CUDNN_ARCHIVE``` referes to your cuDNN archive. 
 Afterwards the installation is performed with the command
