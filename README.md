@@ -19,7 +19,7 @@ This section presents a list of core design concepts with their rationale and in
 Building from source is the only way to get rid of inconsistency issues with dependencies of pre-built packages.<br>
 2) <i>Scripts are written in bash</i><br>
 Bash is available for clearly-installed Ubuntu and is relatively low-level choice. <br>
-3) <i>Supported systems are Ubuntu 16.04 and Ubuntu 18.04</i><br>
+3) <i>Supported systems are Ubuntu 18.04 and Ubuntu 20.04</i><br>
 These are presumably the mostly used operating systems in computer vision community.
 <hr>
 <h4>Scripts organisation structure</h4>
@@ -39,7 +39,7 @@ The collection of scripts is organised as follows
 ## Usage
 <h4>Operating system</h4>
 Before installing components, make sure you don't have conflicts on your Ubuntu system with the software to be built and installed. The scripts presented here do not delete anything from your system in order to allow them working.<br>
-The workability of the scripts was tested only on clear Ubuntu 16.04 or Ubuntu 18.04 and that is the ideal condition.<br>
+The workability of the scripts was tested only on clear Ubuntu 18.04 or Ubuntu 20.04 and that is the ideal condition.<br>
 
 <h4>Some of the core configuration variables</h4>
 
@@ -54,7 +54,7 @@ The usage of CVWorkspace consists of four installation steps:
 3) Frameworks with their computer vision ecosystems
 4) Additional and production components.
 
-Suppose, you have clear Ubuntu 16.04 or Ubuntu 18.04.<br>
+Suppose, you have clear Ubuntu 18.04 or Ubuntu 20.04.<br>
 The following sections separately describe each of the steps.
 
 ### CUDA
@@ -179,7 +179,7 @@ The following table summarises additional components and their switch options
 
 <b>Note.</b> ffmpeg executable is being searched by torchvision's setup script. If you have FFmpeg installed before torchvision, you may face torchvision build issues.<br>
 
-<b>Note.</b> It is recommended to use official OpenVINO installers, provided by Intel. One cannot reproduce them from source, because of lack of special tools.<br>
+<b>Note.</b> It is recommended to use official OpenVINO installers, provided by Intel. One cannot reproduce them from source, because of lack of special tools. OpenVINO build is workable only on Ubuntu 18.04.<br>
 
 The production components include
 
@@ -253,4 +253,6 @@ The expected contribution conditions are
 <li> you agree, that your contributions are MIT-licensed
 <li> contributed code is written from scratch and does not have parts copied from other repositories.
 </ul>
+
+
 
