@@ -28,10 +28,6 @@ if [ "$WITH_CAFFE2" = "1" ]; then
     source $ROOT_DIR/frameworks/caffe2/main/install_caffe2.sh
 fi
 
-if [ "$WITH_DETECTRON" = "1" ]; then
-    source $ROOT_DIR/frameworks/caffe2/detectron/install_detectron.sh
-fi
-
 if [ "$WITH_MXNET" = "1" ]; then
     source $ROOT_DIR/frameworks/mxnet/main/install_mxnet.sh
 fi
@@ -46,10 +42,6 @@ fi
 
 if [ "$WITH_TORCHVISION" = "1" ]; then
     source $ROOT_DIR/frameworks/pytorch/torchvision/install_torchvision.sh
-fi
-
-if [ "$WITH_APEX" = "1" ]; then
-    source $ROOT_DIR/frameworks/pytorch/apex/install_apex.sh
 fi
 
 if [ "$WITH_FVCORE" = "1" ]; then

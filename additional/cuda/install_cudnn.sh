@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CUDNN_ARCHIVE=cudnn-10.2-linux-x64-v7.6.5.32.tgz
+CUDNN_ARCHIVE=cudnn-11.0-linux-x64-v8.0.3.33.tgz
 
 mkdir cudnn_out
 tar -zxvf $CUDNN_ARCHIVE -C cudnn_out
