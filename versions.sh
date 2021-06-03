@@ -2,9 +2,9 @@
 
 # ===== BASE_DEPS =====
 
-: ${BAZEL_VERSION:=3.1.0}
-: ${BOOST_VERSION:=1.74.0}
-: ${CMAKE_VERSION:=3.18.3}
+: ${BAZEL_VERSION:=3.7.2}
+: ${BOOST_VERSION:=1.75.0}
+: ${CMAKE_VERSION:=3.20.1}
 
 # no versions supported for cocoapi
 : ${COCOAPI_VERSION:=master}
@@ -14,11 +14,11 @@
 : ${GTEST_VERSION:=1.10.0}
 : ${HDF5_VERSION:=1.12.0}
 : ${LEVELDB_VERSION:=1.20}
-: ${LMDB_VERSION:=0.9.24}
-: ${OPENBLAS_VERSION:=0.3.10}
+: ${LMDB_VERSION:=0.9.28}
+: ${OPENBLAS_VERSION:=0.3.14}
 # Caffe does not support OpenCV4
-: ${OPENCV3_VERSION:=3.4.11}
-: ${OPENCV4_VERSION:=4.4.0}
+: ${OPENCV3_VERSION:=3.4.14}
+: ${OPENCV4_VERSION:=4.5.2}
 : ${PROTOBUF_VERSION:=3.11.3}
 : ${PYTHON_VERSION:=3.7}
 : ${SNAPPY_VERSION:=1.1.8}
@@ -41,24 +41,24 @@
 
 # MXNet
 
-: ${MXNET_VERSION:=1.7.0}
-: ${GLUONCV_VERSION:=0.8.0}
+: ${MXNET_VERSION:=1.8.0}
+: ${GLUONCV_VERSION:=0.10.0}
 
 # Pytorch
 
-: ${PYTORCH_VERSION:=1.6.0}
+: ${PYTORCH_VERSION:=1.8.1}
 
 : ${FVCORE_VERSION:=master}
 
-: ${DETECTRON2_VERSION:=0.2.1}
+: ${DETECTRON2_VERSION:=0.4}
 
-: ${TORCHVISION_VERSION:=0.7.0}
+: ${TORCHVISION_VERSION:=0.9.1}
 
-: ${CLASSYVISION_VERSION:=0.4.0}
+: ${CLASSYVISION_VERSION:=0.5.0}
 
 # Tensorflow
 
-: ${TENSORFLOW_VERSION:=2.3}
+: ${TENSORFLOW_VERSION:=2.5}
 
 # TF OD API does support actual versioning
 # But it is not updated that much nowadays

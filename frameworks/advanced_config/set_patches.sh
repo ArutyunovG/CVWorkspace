@@ -12,7 +12,7 @@
 
 # MXNet
 
-: ${MXNET_PATCH:=$ROOT_DIR/frameworks/mxnet/main/mxnet17_cuda_11.patch}
+: ${MXNET_PATCH:=}
 : ${GLUONCV_PATCH:=}
 
 # Pytorch
