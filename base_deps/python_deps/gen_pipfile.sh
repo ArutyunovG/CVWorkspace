@@ -42,6 +42,8 @@ echo 'lxml = "*"' >> $PIPFILE
 echo 'tf_slim = "*"' >> $PIPFILE
 echo 'pyyaml = "*"' >> $PIPFILE
 echo 'numpy = "<1.19"' >> $PIPFILE
+echo 'albumentations = "*"' >> $PIPFILE
+echo 'imgaug = "*"' >> $PIPFILE
 
 echo '[requires]' >> $PIPFILE
 echo 'python_version = "'$PYTHON_VERSION'"' >> $PIPFILE
