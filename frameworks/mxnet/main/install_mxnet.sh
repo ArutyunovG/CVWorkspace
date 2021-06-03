@@ -12,6 +12,7 @@ cmake .. -DCMAKE_INSTALL_PREFIX=install \
          -DCMAKE_BUILD_TYPE=$MXNET_BUILD_TYPE \
          -DCMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc \
          -DUSE_LAPACK=OFF \
+         -DUSE_MKLDNN=OFF \
          -DCUDA_ARCH_LIST="$MXNET_CUDA_ARCH"
 
 if [ "$ENABLE_TESTS" = "1" ]; then

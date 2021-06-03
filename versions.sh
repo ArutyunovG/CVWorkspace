@@ -2,7 +2,7 @@
 
 # ===== BASE_DEPS =====
 
-: ${BAZEL_VERSION:=3.1.0}
+: ${BAZEL_VERSION:=3.7.2}
 : ${BOOST_VERSION:=1.75.0}
 : ${CMAKE_VERSION:=3.20.1}
 
@@ -42,7 +42,7 @@
 # MXNet
 
 : ${MXNET_VERSION:=1.8.0}
-: ${GLUONCV_VERSION:=0.8.0}
+: ${GLUONCV_VERSION:=0.10.0}
 
 # Pytorch
 
@@ -54,11 +54,11 @@
 
 : ${TORCHVISION_VERSION:=0.9.1}
 
-: ${CLASSYVISION_VERSION:=0.4.0}
+: ${CLASSYVISION_VERSION:=0.5.0}
 
 # Tensorflow
 
-: ${TENSORFLOW_VERSION:=2.3}
+: ${TENSORFLOW_VERSION:=2.5}
 
 # TF OD API does support actual versioning
 # But it is not updated that much nowadays
