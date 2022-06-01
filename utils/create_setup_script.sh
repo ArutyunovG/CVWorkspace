@@ -17,3 +17,5 @@ echo 'export UTILS_BASE=$UTILS_BASE' >> $SETUP_SCRIPT
 echo 'export LIBS_BASE=$LIBS_BASE' >> $SETUP_SCRIPT
 echo 'export SETUP_SCRIPT='$SETUP_SCRIPT >> $SETUP_SCRIPT
 echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/lib64' >> $SETUP_SCRIPT
+echo 'export PATH=$PATH:/usr/local/cuda/bin' >> $SETUP_SCRIPT
+

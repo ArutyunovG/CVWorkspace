@@ -60,10 +60,6 @@ if [ "$WITH_TENSORFLOW" = "1" ]; then
     source $ROOT_DIR/frameworks/tensorflow/main/install_tensorflow.sh
 fi
 
-if [ "$WITH_TF_OD_API" = "1" ]; then
-    source $ROOT_DIR/frameworks/tensorflow/tf_od_api/install_tf_od_api.sh
-fi
-
 if [ "$WITH_OPENVINO" = "1" ]; then
     source $ROOT_DIR/additional/openvino/install_openvino.sh	
 fi

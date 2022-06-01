@@ -1,14 +1,9 @@
-#!/bin/bash
+\#!/bin/bash
 
 # Caffe
 
 : ${CAFFE_URL:=https://github.com/bvlc/caffe.git}
 : ${CAFFE_SSD_URL:=https://github.com/weiliu89/caffe.git}
-
-# Caffe2
-
-: ${CAFFE2_URL:=https://github.com/pytorch/pytorch.git}
-: ${DETECTRON_URL:=https://github.com/facebookresearch/Detectron.git}
 
 # MXNet
 
@@ -27,4 +22,4 @@
 # Tensorflow
 
 : ${TENSORFLOW_URL:=https://github.com/tensorflow/tensorflow.git}
-: ${TF_OD_API_URL:=https://github.com/tensorflow/models.git}
+

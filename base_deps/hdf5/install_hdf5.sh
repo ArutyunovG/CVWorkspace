@@ -1,4 +1,4 @@
-git clone --recursive https://bitbucket.hdfgroup.org/scm/hdffv/hdf5.git
+git clone --recursive https://github.com/HDFGroup/hdf5.git
 cd hdf5 && git checkout hdf5-$(echo $HDF5_VERSION | sed 's/\./_/g')
 mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install \

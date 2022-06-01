@@ -2,13 +2,8 @@
 
 # Caffe
 
-: ${CAFFE_PATCH:=}
-: ${CAFFE_SSD_PATCH:=}
-
-# Caffe2
-
-: ${CAFFE2_PATCH:=}
-: ${DETECTRON_PATCH:=}
+: ${CAFFE_PATCH:=$ROOT_DIR/frameworks/caffe/main/caffe.patch}
+: ${CAFFE_SSD_PATCH:=$ROOT_DIR/frameworks/caffe/main/caffe.patch}
 
 # MXNet
 
