@@ -1,0 +1,26 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 27d172f..18b151c 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,4 +1,8 @@
+ cmake_minimum_required(VERSION 2.8.7)
++
++if (POLICY CMP0074)
++  cmake_policy(SET CMP0074 NEW)
++endif()
+ if(POLICY CMP0046)
+   cmake_policy(SET CMP0046 NEW)
+ endif()
+diff --git a/src/caffe/util/io.cpp b/src/caffe/util/io.cpp
+index 5295d9d..f71553c 100644
+--- a/src/caffe/util/io.cpp
++++ b/src/caffe/util/io.cpp
+@@ -54,7 +54,7 @@ bool ReadProtoFromBinaryFile(const char* filename, Message* proto) {
+   CHECK_NE(fd, -1) << "File not found: " << filename;
+   ZeroCopyInputStream* raw_input = new FileInputStream(fd);
+   CodedInputStream* coded_input = new CodedInputStream(raw_input);
+-  coded_input->SetTotalBytesLimit(kProtoReadBytesLimit, 536870912);
++  coded_input->SetTotalBytesLimit(kProtoReadBytesLimit);
+ 
+   bool success = proto->ParseFromCodedStream(coded_input);
+ 

@@ -23,7 +23,7 @@ echo 'networkx = "*"' >> $PIPFILE
 echo 'matplotlib = "*"' >> $PIPFILE
 echo 'nose = "*"' >> $PIPFILE
 echo 'tensorboardx = "*"' >> $PIPFILE
-echo 'protobuf = "=='$PROTOBUF_VERSION'"' >> $PIPFILE
+echo 'protobuf = "== 3.20.1"' >> $PIPFILE
 echo 'future = "*"' >> $PIPFILE
 echo 'typing = "*"' >> $PIPFILE
 echo 'requests = "*"' >> $PIPFILE
@@ -33,7 +33,7 @@ echo 'mock = "*"' >> $PIPFILE
 echo 'Cython = "*"' >> $PIPFILE
 echo 'onnx = "*"' >> $PIPFILE
 echo 'portalocker = "*"' >> $PIPFILE
-echo 'setuptools = "==45.0"' >> $PIPFILE
+echo 'setuptools = "*"' >> $PIPFILE
 echo 'ipykernel = "*"' >> $PIPFILE
 echo 'keras_applications = "*"' >> $PIPFILE
 echo 'keras_preprocessing = "*"' >> $PIPFILE
@@ -41,7 +41,7 @@ echo 'contextlib2 = "*"' >> $PIPFILE
 echo 'lxml = "*"' >> $PIPFILE
 echo 'tf_slim = "*"' >> $PIPFILE
 echo 'pyyaml = "*"' >> $PIPFILE
-echo 'numpy = "<1.19"' >> $PIPFILE
+echo 'numpy = "*"' >> $PIPFILE
 echo 'albumentations = "*"' >> $PIPFILE
 echo 'imgaug = "*"' >> $PIPFILE
 

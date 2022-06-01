@@ -2,8 +2,8 @@
 
 mkdir -p $LIBS_BASE
 
-wget https://github.com/protocolbuffers/protobuf/releases/download/v$PROTOBUF_VERSION/protobuf-all-$PROTOBUF_VERSION.tar.gz
-tar -zxvf protobuf-all-$PROTOBUF_VERSION.tar.gz && rm protobuf-all-$PROTOBUF_VERSION.tar.gz
+wget https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOBUF_VERSION: -4}/protobuf-cpp-$PROTOBUF_VERSION.tar.gz
+tar -zxvf protobuf-cpp-$PROTOBUF_VERSION.tar.gz && rm protobuf-cpp-$PROTOBUF_VERSION.tar.gz
 cd protobuf-$PROTOBUF_VERSION/cmake && mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install \
          -DBUILD_SHARED_LIBS=ON \

@@ -131,12 +131,9 @@ The following table summarises frameworks and the appropriate switches
 |---|---|
 |  Caffe | WITH_CAFFE |
 | Caffe SSD  | WITH_CAFFE_SSD  |
-| Caffe2  |  WITH_CAFFE2 |
 |  MXNet | WITH_MXNET |
 | Pytorch  | WITH_PYTORCH  |
 | Tensorflow  |  WITH_TENSORFLOW |
-
-<b>Note.</b> Please note, that Python bindings of Caffe2 are automatically installed with Pytorch and ```WITH_PYTORCH``` is the recommended option to install Caffe2. ```WITH_CAFFE2``` option is separated to provide CMake and C++ oriented Caffe2 build, which can be useful for production deployment.
 
 The following table summarises computer vision environments on top of deep learning frameworks and the appropriate switches
 
@@ -145,7 +142,6 @@ The following table summarises computer vision environments on top of deep learn
 | Detectron2  | WITH_TORCHVISION, WITH_FVCORE, WITH_DETECTRON2 | Pytorch |
 | ClassyVision  | WITH_TORCHVISION, WITH_FVCORE, WITH_CLASSYVISION | Pytorch |
 |  GluonCV | WITH_GLUONCV | MXNet |
-| TF OD API  | WITH_TF_OD_API  | TensorFlow |
 
 ### Additional and production components
 
