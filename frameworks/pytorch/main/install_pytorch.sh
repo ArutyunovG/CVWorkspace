@@ -24,6 +24,7 @@ fi
 
 export BLAS=OpenBLAS
 export TORCH_CUDA_ARCH_LIST="$TORCH_CUDA_ARCH"
+export BUILD_CAFFE2=1
 
 python setup.py install
 
