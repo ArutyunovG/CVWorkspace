@@ -23,8 +23,10 @@ if [ $PYTORCH_BUILD_TYPE = "Release" ]; then
 fi
 
 export BLAS=OpenBLAS
+export USE_LAPACK=0
 export TORCH_CUDA_ARCH_LIST="$TORCH_CUDA_ARCH"
 export BUILD_CAFFE2=1
+export PYTHONPATH=$PYTHONPATH:$(pwd)
 
 python setup.py install
 
