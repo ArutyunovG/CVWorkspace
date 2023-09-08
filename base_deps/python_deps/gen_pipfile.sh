@@ -19,11 +19,12 @@ echo '[packages]' >> $PIPFILE
 echo 'enum34 = "*"' >> $PIPFILE
 echo 'scipy = "*"' >> $PIPFILE
 echo 'scikit-image = "*"' >> $PIPFILE
+echo 'sympy = "*"' >> $PIPFILE
 echo 'networkx = "*"' >> $PIPFILE
 echo 'matplotlib = "*"' >> $PIPFILE
 echo 'nose = "*"' >> $PIPFILE
 echo 'tensorboardx = "*"' >> $PIPFILE
-echo 'protobuf = "== 3.20.1"' >> $PIPFILE
+echo 'protobuf = "*"' >> $PIPFILE
 echo 'future = "*"' >> $PIPFILE
 echo 'typing = "*"' >> $PIPFILE
 echo 'requests = "*"' >> $PIPFILE

@@ -10,7 +10,7 @@ python_release=$PYTHON_VERSION
 sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt update
 
-sudo apt install -yq python$python_release python$python_release-dev
+sudo apt install -yq python$python_release python$python_release-distutils python$python_release-dev
 
 # python3-tk is needed for gluoncv
 # installation won't work if you have python3-tk already installed
