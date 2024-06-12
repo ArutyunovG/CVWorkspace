@@ -24,14 +24,14 @@ echo 'networkx = "*"' >> $PIPFILE
 echo 'matplotlib = "*"' >> $PIPFILE
 echo 'nose = "*"' >> $PIPFILE
 echo 'tensorboardx = "*"' >> $PIPFILE
-echo 'protobuf = "*"' >> $PIPFILE
+echo 'protobuf = "==4.'$PROTOBUF_VERSION'"' >> $PIPFILE
 echo 'future = "*"' >> $PIPFILE
 echo 'typing = "*"' >> $PIPFILE
 echo 'requests = "*"' >> $PIPFILE
 echo 'tqdm = "*"' >> $PIPFILE
 echo 'opencv-python = ">=3.2,<4.0"' >> $PIPFILE
 echo 'mock = "*"' >> $PIPFILE
-echo 'Cython = "*"' >> $PIPFILE
+echo 'Cython = "==0.29.37"' >> $PIPFILE
 echo 'onnx = "*"' >> $PIPFILE
 echo 'portalocker = "*"' >> $PIPFILE
 echo 'setuptools = "*"' >> $PIPFILE

@@ -3,7 +3,7 @@
 # Caffe
 
 : ${CAFFE_PATCH:=$ROOT_DIR/frameworks/caffe/main/caffe.patch}
-: ${CAFFE_SSD_PATCH:=$ROOT_DIR/frameworks/caffe/main/caffe.patch}
+: ${CAFFE_SSD_PATCH:=$ROOT_DIR/frameworks/caffe/ssd/caffe.patch}
 
 # MXNet
 
