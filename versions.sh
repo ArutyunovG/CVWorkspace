@@ -2,7 +2,7 @@
 
 # ===== BASE_DEPS =====
 
-: ${BAZEL_VERSION:=5.3.0}
+: ${BAZEL_VERSION:=6.5.0}
 : ${BOOST_VERSION:=1.85.0}
 : ${CMAKE_VERSION:=3.29.5}
 
@@ -48,7 +48,7 @@
 
 # Tensorflow
 
-: ${TENSORFLOW_VERSION:=2.13.0}
+: ${TENSORFLOW_VERSION:=2.16.1}
 
 
 # ====== ADDITIONAL and PRODUCTION ======

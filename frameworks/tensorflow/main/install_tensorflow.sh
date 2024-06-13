@@ -23,6 +23,7 @@ export GCC_HOST_COMPILER_PATH=$(which gcc)
 export TF_NEED_MPI=0
 export CC_OPT_FLAGS="-march=native -Wno-sign-compare"
 export TF_SET_ANDROID_WORKSPACE=0
+export TF_PYTHON_VERSION=$(python -c "import sys; print(f'{sys.version_info[0]}.{sys.version_info[1]}')")
 
 ./configure
 
