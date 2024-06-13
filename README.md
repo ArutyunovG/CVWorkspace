@@ -36,6 +36,12 @@ The collection of scripts is organised as follows
 ``` additional ``` &ndash; provides various additional installation scripts for tools, which are not necessary for deep learning frameworks, but are of common usage in computer vision community<br>
 ``` production ``` &ndash; provides production specific installation scripts.
 
+## Docker
+You can download prebuilt docker image, based on the provided Dockerfile by running
+```
+docker pull arutyunovgrigory/cv_workspace:13062024
+```
+```nvidia-container-toolkit``` is needed to access GPUs inside the container.
 ## Usage
 <h4>Operating system</h4>
 Before installing components, make sure you don't have conflicts on your Ubuntu system with the software to be built and installed. The scripts presented here do not delete anything from your system in order to allow them working.<br>
