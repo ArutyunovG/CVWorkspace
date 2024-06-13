@@ -27,7 +27,7 @@ cmake .. \
     -DCUDA_ARCH_NAME="Manual" \
     -DCUDA_ARCH_BIN="$CAFFE_CUDA_ARCH" \
     -DCUDA_ARCH_PTX="$CAFFE_CUDA_ARCH" \
-    -DCMAKE_CXX_FLAGS="-std=c++11 -pthread -Wno-deprecated-declarations" \
+    -DCMAKE_CXX_FLAGS="-std=c++17 -fpermissive -pthread -Wno-deprecated-declarations" \
     -DPYTHON_EXECUTABLE=$(which python)
 
 if [ "$ENABLE_TESTS" = "1" ]; then

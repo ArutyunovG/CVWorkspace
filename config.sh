@@ -45,7 +45,7 @@ export WORKON_HOME=$LIBS_BASE/pipenv/.venvs
 # You can find your GPU's compute capability in Wikipedia
 # https://en.wikipedia.org/wiki/CUDA#GPUs_supported
 #
-: ${CUDA_ARCH:="61 75"}
+: ${CUDA_ARCH:="89"}
 
 #----------------------------------
 # ------- Base dependencies -------

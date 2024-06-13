@@ -10,7 +10,7 @@ python_release=$PYTHON_VERSION
 sudo add-apt-repository ppa:deadsnakes/ppa -y
 sudo apt update
 
-sudo apt install -yq python$python_release python$python_release-dev
+sudo apt install -yq python$python_release python$python_release-distutils python$python_release-dev python$python_release-venv
 
 # python3-tk is needed for gluoncv
 # installation won't work if you have python3-tk already installed
@@ -21,7 +21,10 @@ sudo apt install -yq python$python_release-tk
 # this is used for cv2 import in docker
 sudo apt install -yq libsm6 libxext6 libxrender-dev
 
-sudo python$python_release -m pip install --upgrade pip 
+sudo python$python_release -m ensurepip --upgrade
+
+sudo python$python_release -m pip install --upgrade pip
+sudo python$python_release -m pip install --upgrade setuptools
 sudo python$python_release -m pip install  pipenv
 
 cd $BASE_DEPS/python_deps

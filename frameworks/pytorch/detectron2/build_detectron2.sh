@@ -8,17 +8,15 @@ if [ -n "$DETECTRON2_PATCH" ]; then
 fi
 
 if [ $DETECTRON2_BUILD_TYPE = "Debug" ]; then
-    CFLAGS='-O0 -g' python -m pip install --editable .
+    CFLAGS='-O0 -g' python setup.py install
 fi
 
 if [ $DETECTRON2_BUILD_TYPE = "RelWithDebInfo" ]; then
-    CFLAGS='-g' python -m pip install --editable .
+    CFLAGS='-g' python setup.py install
 fi
 
 if [ $DETECTRON2_BUILD_TYPE = "Release" ]; then
-    CFLAGS='' python -m pip install --editable .
+    CFLAGS='' python setup.py install
 fi
 
-cd .. && mkdir -p $LIBS_BASE/pytorch && mv detectron2 $LIBS_BASE/pytorch/detectron2
-
-echo 'export PYTHONPATH=$PYTHONPATH:$LIBS_BASE/pytorch/detectron2' >> $SETUP_SCRIPT
+cd .. && rm -rf detectron2

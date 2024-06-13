@@ -2,14 +2,16 @@
 
 mkdir -p $LIBS_BASE
 
-wget https://github.com/protocolbuffers/protobuf/releases/download/v${PROTOBUF_VERSION: -4}/protobuf-cpp-$PROTOBUF_VERSION.tar.gz
-tar -zxvf protobuf-cpp-$PROTOBUF_VERSION.tar.gz && rm protobuf-cpp-$PROTOBUF_VERSION.tar.gz
-cd protobuf-$PROTOBUF_VERSION/cmake && mkdir build && cd build
+git clone https://github.com/protocolbuffers/protobuf.git
+cd protobuf && git checkout v$PROTOBUF_VERSION
+git submodule update --recursive --init
+mkdir build && cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=install \
          -DBUILD_SHARED_LIBS=ON \
          -DZLIB_ROOT=$LIBS_BASE/zlib
 make -j$(nproc) install
-cd ../../.. && mv protobuf-$PROTOBUF_VERSION/cmake/build/install $LIBS_BASE/protobuf && rm -rf protobuf-$PROTOBUF_VERSION
+cd ../.. && mv protobuf/build/install $LIBS_BASE/protobuf && rm -rf protobuf
 ln -s $LIBS_BASE/protobuf/bin $UTILS_BASE/protobuf
 
+echo 'export LD_LIBRARY_PATH=$LIBS_BASE/protobuf/lib' >> $SETUP_SCRIPT
 echo 'export PATH=$PATH:$UTILS_BASE/protobuf' >> $SETUP_SCRIPT

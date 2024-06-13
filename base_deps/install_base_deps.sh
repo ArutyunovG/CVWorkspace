@@ -8,6 +8,8 @@ if [ "$WITH_BASE_DEPS" = "1" ]; then
     sudo apt update
     sudo apt install -yq software-properties-common 
     sudo apt install -yq wget git gfortran
+    sudo apt install -yq patchelf
+    sudo apt install -yq libjpeg-dev libpng-dev
 fi
 
 if [ "$WITH_PYTHON_DEPS" = "1" ]; then

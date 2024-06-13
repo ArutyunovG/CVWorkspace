@@ -19,8 +19,8 @@ This section presents a list of core design concepts with their rationale and in
 Building from source is the only way to get rid of inconsistency issues with dependencies of pre-built packages.<br>
 2) <i>Scripts are written in bash</i><br>
 Bash is available for clearly-installed Ubuntu and is relatively low-level choice. <br>
-3) <i>Supported systems are Ubuntu 18.04 and Ubuntu 20.04</i><br>
-These are presumably the mostly used operating systems in computer vision community.
+3) <i>Supported system is Ubuntu 22.04</i><br>
+These is presumably one of the mostly used operating systems in computer vision community.
 <hr>
 <h4>Scripts organisation structure</h4>
 
@@ -39,7 +39,7 @@ The collection of scripts is organised as follows
 ## Usage
 <h4>Operating system</h4>
 Before installing components, make sure you don't have conflicts on your Ubuntu system with the software to be built and installed. The scripts presented here do not delete anything from your system in order to allow them working.<br>
-The workability of the scripts was tested only on clear Ubuntu 18.04 or Ubuntu 20.04 and that is the ideal condition.<br>
+The workability of the scripts was tested only on clear Ubuntu 22.04 and that is the ideal condition.<br>
 
 <h4>Some of the core configuration variables</h4>
 
@@ -54,12 +54,12 @@ The usage of CVWorkspace consists of four installation steps:
 3) Frameworks with their computer vision ecosystems
 4) Additional and production components.
 
-Suppose, you have clear Ubuntu 18.04 or Ubuntu 20.04.<br>
+Suppose, you have clear Ubuntu 22.04.<br>
 The following sections separately describe each of the steps.
 
 ### CUDA
 
-<h4>CUDA</h4>
+<h4>CUDA and cuDNN</h4>
 
 CUDA is being installed separately from the main script ```install.sh```.<br>
 ```cd``` to ```CVWorkspace/additional/cuda``` and run
@@ -68,20 +68,9 @@ CUDA is being installed separately from the main script ```install.sh```.<br>
 sudo bash -i install_cuda.sh
 ```
 
-It will install CUDA 11.2 and appropriate nvidia driver at the same time.<br>
+It will install CUDA 12.4, cudnn 9 for that CUDA version and appropriate nvidia driver, all at the same time.<br>
 Please, restart your computer afterwards for the changes to take effect.<br>
 
-<h4>cuDNN</h4>
-
-Installing cuDNN is perhaps the most inconvinient job for the CVWorksapce user.<br> 
-Please, download the latest cudnn archive compatible with CUDA 11.2 from official NVIDIA <a href = "https://developer.nvidia.com/rdp/cudnn-download">web site</a>. NVIDIA wants users to be logged in before accessing it. 
-
-Once cuDNN archive has been downloaded, please modify ```install_cudnn.sh```, so that the variable ```CUDNN_ARCHIVE``` referes to your cuDNN archive. 
-Afterwards the installation is performed with the command
-
-```
-sudo bash -i install_cudnn.sh
-```
 ### Base dependencies
 
 To install base dependencies export ```WITH_BASE_DEPS``` with value 1
@@ -131,17 +120,14 @@ The following table summarises frameworks and the appropriate switches
 |---|---|
 |  Caffe | WITH_CAFFE |
 | Caffe SSD  | WITH_CAFFE_SSD  |
-|  MXNet | WITH_MXNET |
 | Pytorch  | WITH_PYTORCH  |
 | Tensorflow  |  WITH_TENSORFLOW |
 
-The following table summarises computer vision environments on top of deep learning frameworks and the appropriate switches
+The following table summaries computer vision environments on top of deep learning frameworks and the appropriate switches
 
 | Target  | Option  | Base framework |
 |---|---|---|
 | Detectron2  | WITH_TORCHVISION, WITH_FVCORE, WITH_DETECTRON2 | Pytorch |
-| ClassyVision  | WITH_TORCHVISION, WITH_FVCORE, WITH_CLASSYVISION | Pytorch |
-|  GluonCV | WITH_GLUONCV | MXNet |
 
 ### Additional and production components
 
@@ -249,6 +235,4 @@ The expected contribution conditions are
 <li> you agree, that your contributions are MIT-licensed
 <li> contributed code is written from scratch and does not have parts copied from other repositories.
 </ul>
-
-
 
