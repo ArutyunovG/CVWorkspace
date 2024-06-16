@@ -24,18 +24,6 @@ if [ "$WITH_CAFFE_SSD" = "1" ]; then
     source $ROOT_DIR/frameworks/caffe/ssd/install_caffe.sh
 fi
 
-if [ "$WITH_CAFFE2" = "1" ]; then
-    source $ROOT_DIR/frameworks/caffe2/main/install_caffe2.sh
-fi
-
-if [ "$WITH_MXNET" = "1" ]; then
-    source $ROOT_DIR/frameworks/mxnet/main/install_mxnet.sh
-fi
-
-if [ "$WITH_GLUONCV" = "1" ]; then
-    source $ROOT_DIR/frameworks/mxnet/gluoncv/install_gluoncv.sh
-fi
-
 if [ "$WITH_PYTORCH" = "1" ]; then
     source $ROOT_DIR/frameworks/pytorch/main/install_pytorch.sh
 fi
@@ -52,8 +40,32 @@ if [ "$WITH_DETECTRON2" = "1" ]; then
     source $ROOT_DIR/frameworks/pytorch/detectron2/build_detectron2.sh
 fi
 
-if [ "$WITH_CLASSYVISION" = "1" ]; then
-    source $ROOT_DIR/frameworks/pytorch/classyvision/install_classyvision.sh
+if [ "$WITH_MIM" = "1" ]; then
+    source $ROOT_DIR/frameworks/pytorch/mim/install_mim.sh
+fi
+
+if [ "$WITH_MMENGINE" = "1" ]; then
+    source $ROOT_DIR/frameworks/pytorch/mmengine/install_mmengine.sh
+fi
+
+if [ "$WITH_MMCV" = "1" ]; then
+    source $ROOT_DIR/frameworks/pytorch/mmcv/install_mmcv.sh
+fi
+
+if [ "$WITH_MMPRETRAIN" = "1" ]; then
+    source $ROOT_DIR/frameworks/pytorch/mmpretrain/install_mmpretrain.sh
+fi
+
+if [ "$WITH_MMDETECTION" = "1" ]; then
+    source $ROOT_DIR/frameworks/pytorch/mmdetection/install_mmdetection.sh
+fi
+
+if [ "$WITH_MMSEGMENTATION" = "1" ]; then
+    source $ROOT_DIR/frameworks/pytorch/mmsegmentation/install_mmsegmentation.sh
+fi
+
+if [ "$WITH_MMDEPLOY" = "1" ]; then
+    source $ROOT_DIR/frameworks/pytorch/mmdeploy/install_mmdeploy.sh
 fi
 
 if [ "$WITH_TENSORFLOW" = "1" ]; then
@@ -61,7 +73,7 @@ if [ "$WITH_TENSORFLOW" = "1" ]; then
 fi
 
 if [ "$WITH_OPENVINO" = "1" ]; then
-    source $ROOT_DIR/additional/openvino/install_openvino.sh	
+    source $ROOT_DIR/additional/openvino/install_openvino.sh
 fi
 
 if [ "$WITH_DATASET_CONVERTERS" = "1" ]; then
