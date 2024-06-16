@@ -39,7 +39,7 @@ The collection of scripts is organised as follows
 ## Docker
 You can download prebuilt docker image, based on the provided Dockerfile by running
 ```
-docker pull arutyunovgrigory/cv_workspace:13062024
+docker pull arutyunovgrigory/cv_workspace:latest
 ```
 ```nvidia-container-toolkit``` is needed to access GPUs inside the container.
 ## Usage
@@ -134,6 +134,7 @@ The following table summaries computer vision environments on top of deep learni
 | Target  | Option  | Base framework |
 |---|---|---|
 | Detectron2  | WITH_TORCHVISION, WITH_FVCORE, WITH_DETECTRON2 | Pytorch |
+| OpenMMLab libraries  | WITH_MIM, WITH_MMENGINE, WITH_MMCV, WITH_MMPRETRAIN, WITH_MMDETECTION, WITH_MMSEGMENTATION, WITH_MMDEPLOY | Pytorch |
 
 ### Additional and production components
 
