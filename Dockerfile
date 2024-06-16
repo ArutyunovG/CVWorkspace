@@ -4,8 +4,8 @@ ARG USER=username
 
 ENV USER=${USER}
 
-RUN apt update && apt install -y sudo && apt install -y git \
-    apt-get install -y ssh && apt install -y libgl1 &&
+RUN apt update && apt install -y sudo && apt install -y git && \
+    apt-get install -y ssh && apt install -y libgl1 && \
     adduser --shell /bin/bash --disabled-password --gecos "" ${USER} && \
     usermod -aG sudo ${USER}
 
@@ -25,6 +25,11 @@ RUN cd CVWorkspace && WITH_PYTORCH=1 bash -ix install.sh
 RUN cd CVWorkspace && WITH_TORCHVISION=1 WITH_FVCORE=1 WITH_DETECTRON2=1 bash -ix install.sh
 RUN cd CVWorkspace && WITH_TENSORFLOW=1 bash -ix install.sh
 RUN cd CVWorkspace && WITH_MIM=1 WITH_MMENGINE=1 WITH_MMCV=1 \
-                      WITH_MMPRETRAIN=1 WITH_MMDETECTION=1 WITH_MMSEGMENTATION =1 bash -ix install.sh
+                      WITH_MMPRETRAIN=1 WITH_MMDETECTION=1 WITH_MMSEGMENTATION=1 bash -ix install.sh
 
-ENTRYPOINT service ssh restart && bash && source ~/cv_workspace/libs/setup.sh
+RUN apt -y install openssh-server && mkdir -p /var/run/sshd && \
+    sed -i 's/^#PermitRootLogin .*/PermitRootLogin yes/' /etc/ssh/sshd_config && \
+    echo "${USER}:{USER}"|chpasswd
+
+USER ${USER}
+RUN echo 'source ${HOME}/cv_workspace/libs/setup.sh' >> /home/${USER}/.bashrc
