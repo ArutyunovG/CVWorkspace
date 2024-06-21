@@ -31,6 +31,8 @@ USER ${USER}
 
 RUN git clone https://github.com/ArutyunovG/CVWorkspace.git
 RUN cd CVWorkspace && WITH_BASE_DEPS=1 bash -ix install.sh
+RUN cd CVWorkspace && WITH_CAFFE_SSD=1 bash -ix install.sh
+RUN cd CVWorkspace && WITH_PYTORCH=1 bash -ix install.sh
 
 
 RUN echo 'source $HOME/cv_workspace/libs/setup.sh' >> /home/${USER}/.bashrc
