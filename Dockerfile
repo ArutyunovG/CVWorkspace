@@ -33,6 +33,9 @@ RUN git clone https://github.com/ArutyunovG/CVWorkspace.git
 RUN cd CVWorkspace && WITH_BASE_DEPS=1 bash -ix install.sh
 RUN cd CVWorkspace && WITH_CAFFE_SSD=1 bash -ix install.sh
 RUN cd CVWorkspace && WITH_PYTORCH=1 bash -ix install.sh
-
+RUN cd CVWorkspace && WITH_TORCHVISION=1 WITH_FVCORE=1 WITH_DETECTRON2=1 bash -ix install.sh
+RUN cd CVWorkspace && WITH_MIM=1 WITH_MMENGINE=1 WITH_MMCV=1 \
+                      WITH_MMPRETRAIN=1 WITH_MMDETECTION=1 WITH_MMSEGMENTATION=1 bash -ix install.sh
+RUN cd CVWorkspace && WITH_TENSORFLOW=1 bash -ix install.sh
 
 RUN echo 'source $HOME/cv_workspace/libs/setup.sh' >> /home/${USER}/.bashrc
