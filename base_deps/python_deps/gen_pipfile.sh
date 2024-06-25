@@ -45,6 +45,7 @@ echo 'pyyaml = "*"' >> $PIPFILE
 echo 'numpy = "*"' >> $PIPFILE
 echo 'albumentations = "*"' >> $PIPFILE
 echo 'imgaug = "*"' >> $PIPFILE
+echo 'clearml = "*"' >> $PIPFILE
 
 echo '[requires]' >> $PIPFILE
 echo 'python_version = "'$PYTHON_VERSION'"' >> $PIPFILE
