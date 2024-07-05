@@ -39,7 +39,7 @@ The collection of scripts is organised as follows
 ## Docker
 You can download prebuilt docker image, based on the provided Dockerfile by running
 ```
-docker pull arutyunovgrigory/cv_workspace:latest
+docker pull arutyunovgrigory/cvworkspace:latest
 ```
 ```nvidia-container-toolkit``` is needed to access GPUs inside the container.
 ## Usage
